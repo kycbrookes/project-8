@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Website</title>
+	<meta content="My website" name="description">
+	<meta content="Kyle Brookes" name="author">
+	<style>
+	             /* padding is space inside a container, margin is space outside a container */
+	             body {
+	                 padding: 2em;
+	                 margin: 2em;
+	                 background-color: FFFFFF;   /* padding area is shaded, margins are not */
+	             }
+	             
+	             /* center content inside a container */
+	             aside {
+	                 text-align: center;
+	                 float: center;
+	                 width: 20em;
+	                 margin-right: 1em;
+	                 margin-top: 1em;
+	                 margin-left: 1em;
+	                 margin-bottom: 1em;
+	             }
+	             
+	             /* float content inside a block element */
+	             figure {
+	                 float: center;
+	                 width: 20em;
+	                 margin-right: 1em;
+	                 margin-top: 1em;
+	                 margin-left: 1em;
+	                 margin-bottom: 1em;
+	             }
+	             figure img{
+	                 width: 100%;
+	             }
+	             
+	             /* remove bullet points and use CSS Flexbox to arrange the menu links in a row */
+	             nav ul {
+	                 list-style: none;
+	                 padding-left: 0;
+	                 display: flex;
+	                 flex-direction: row;            /* row or column */
+	                 flex-wrap: wrap;
+	                 justify-content: flex-start;    /* horizontal alignment and spacing */
+	                 align-items: center;            /* vertical alignment and spacing */
+	             }
+	             nav ul li {
+	                 background-color: lightsteelblue;
+	                 margin-right: 5em;
+	                 padding: .5em 1em;
+	                 
+	              }
+
+	             /* creates a fixed-width column centered in the browser window */
+	             #container {
+	                 margin-left: auto;
+	                 margin-right: auto;
+	                 min-width: 25rem;
+	                 max-width: 60rem;
+	                 background-color:#FFFFFF;
+	                 padding: 1em;
+	             }
+	             
+	             /* shades the sectioning elements, for demonstration purposes */
+	             /* you could add colors, margins, and padding to each sectioning element instead */
+	             #container > * {
+	                 background-color:#FFFFFF;
+	                 margin: 1em;
+	                 padding: 1em;
+	             }
+
+	             /* code the layout using CSS grid - first, define the grid areas */
+	             #container > header  {grid-area: header;}
+	             #container > nav     {grid-area: nav;}
+	             #container > article {grid-area: article;}
+	             #container > aside   {grid-area: aside;}
+	             #container > footer  {grid-area: footer;}
+	             
+	             #container {
+	                 display: grid;
+	                 grid-template-columns: 75% 25%;
+	                 grid-template-rows: auto;
+	                 grid-template-areas: 
+	                     "header header"     /* repeat grid area name to span across multiple columns */
+	                     "nav nav"
+	                     "article aside"
+	                     "footer footer"
+	             }
+	             
+	             /* use media query are used to define alternative layout for mobile display */
+	             @media (max-width: 40em) {
+	                 #container {
+	                     display: grid;
+	                     grid-template-columns: 100%;
+	                     grid-template-rows: auto;
+	                     grid-template-areas: 
+	                         "header"
+	                         "nav"
+	                         "article"
+	                         "aside"
+	                         "footer"
+	                 }   
+	             }
+	</style>
+</head>
+<body>
+	<div id="container">
+		<header>
+			<h1>Hey, I'm Kyle.</h1>
+		</header>
+		<nav>
+			<ul>
+				<li>Audio</li>
+				<li>Visual</li>
+				<li>Live</li>
+				<li>Blog</li>
+			</ul>
+		</nav>
+		<article>
+			<h1>I'm a producer &amp; DJ based in Cambridge, MA.</h1>
+			<p>In high school I began collecting records, producing music with Ableton Live, and attending shows in the Boston area. Since then I have released original tracks and remixes, collaborated with friends online and in person, and DJed a handful of events.</p>
+			<p>I strongly believe in the power of the the Internet as a platform for connecting people, especially creatives. Most of the music I enjoy listening to is produced by young artists and shared on SoundCloud, a site I've come to rely on to post my own work, get feedback from my peers, and improve my craft.</p>
+			<p>As I set my sights on Los Angeles this fall, I will continue to grow as a producer by playing live sets, collaborating with others, and putting the music first... always.</p>
+			<p>You can reach me <a href="kycbrookes@gmail.com">here</a>.</p>
+		</article>
+		<aside>
+			<figure>
+				<img src="images/read.jpg">
+			</figure>
+			<p><a href="https://www.facebook.com/events/150424712251626/">Raíz Magazine Launch</a>, Fall 2017</p>
+		</aside>
+		<footer>
+			<h2>© Kyle Brookes</h2>
+		</footer>
+	</div>
+</body>
+</html>
